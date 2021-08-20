@@ -108,82 +108,92 @@ d = [
        at: 'University of Sydney',
        money: -500}
   ]
-  function add() {
-    alert("Inserted!");
-    item =   {
-       name: document.getElementById('name').value,
-       from: document.getElementById('from').value,
-       to: document.getElementById('to').value,
-       at: document.getElementById('at').value,
-       money: document.getElementById('money').value
-    }
-    //d.push(item); => đưa item vào cuối mảng
-    d = [item].concat(d); //=> đưa item vào đầu mảng
-    show();
+  function insert(i)
+  {
+    item = {
+        name : document.getElementById('name').value,
+        from : document.getElementById('from').value,
+        to : document.getElementById('to').value,
+        at : document.getElementById('at').value,
+        money : document.getElementById('money').value
+     }
+     save(i);
   }
-  function dele(i){
+  function save(i)
+   {
+   if(item.name != undefined ) d[i].name = item.name;
+   if(item.from != undefined) d[i].from = item.from;
+   if(item.to != undefined) d[i].to = item.to;
+   if(item.at != undefined) d[i].at = item.at;
+   if(item.money != undefined) d[i].money = item.money;
+   show();
+   }
+  function dele(i)
+  {
     d.splice(i, 1);
     show();
     
   }
-  function show() {
+  function show() 
+  {
     s= '';
     for (var i = 0; i < d.length; i++) {
       s += `<tr>
+            <td> <input type = checkbox id = checkbox> </td>
             <td>` + d[i].name + `</td>
             <td>` + d[i].from + `</td>
             <td>` + d[i].to + `</td>
             <td>` + d[i].at + `</td>
             <td>` + d[i].money + `</td>
-            <td> <input type= button value= Delete onclick=dele(`+ i +`)> </td>
+            <td> <input type = button value = Delete onclick=dele(`+ i +`)> </td>
+            <td> <input type = button value = Insert onclick=insert(`+ i +`)> </td>
         </tr>`;
     }
     e = document.getElementById("t");
     e.innerHTML = s;
   }
   
-  function sortIncome() {  
+  function sortIncome()
+  {  
     d.sort( (a, b) => b.money - a.money );
     show();
   }
-  function sortFrom() {
+  function sortFrom()
+   {
     
     d.sort( (a, b) => b.from - a.from );
     show();
   }
-  function sortTo() {
+  function sortTo()
+  {
     
     d.sort( (a, b) => b.to - a.to );
     show();
   }
-  
-  function sortFirstName(){
+  function sortFirstName()
+  {
   
     d.sort( (a, b) => a.name.localeCompare(b.name));
     show();
    
-   }
-  function sortLastName(){
-  
+  }
+  function sortLastName()
+  {
     d.sort( (a, b) => getLastName(a.name).localeCompare(getLastName(b.name)));
     show();
-   
-   }
-  function sortFirstNameDe(){
-  
+  }
+  function sortFirstNameDe()
+  {  
     d.sort( (a, b) => b.name.localeCompare(a.name));
     show();
-   
-   }
-  
-  function sortLastNameDe(){
-  
+  }
+  function sortLastNameDe()
+  {
     d.sort( (a, b) => getLastName(b.name).localeCompare(getLastName(a.name)));
     show();
-   
-   }
-  
-  function getLastName(fullName) {
+  }
+  function getLastName(fullName)
+  {
     return fullName.split(' ').slice(-1).join('');
   }
   function showSort(value)
@@ -210,5 +220,4 @@ d = [
           sortLastNameDe();
        }
   }
-  
   show();

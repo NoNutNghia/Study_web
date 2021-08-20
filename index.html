@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
   <title>JS Bin</title>
 </head>
 <body>
@@ -11,7 +13,7 @@
 <input type="number" id="to"> To <br>  
 <input type="text" id="at"> At<br>
 <input type="number" id="money"> Money<br>
-<input type="button" value="Add" onclick=add()> <br>
+<input type="button" value="Save" onclick=insert()> <br>
 <select onchange=showSort(this.value)>
   <option value="">--------- Sort by --------  </option>
   <option value="sf">Sort by From Year</option>
@@ -22,15 +24,17 @@
   <option value="slnd">Sort by Last Name (decrease)</option>
   <option value="si">Sort by Income</option>
 </select> Desc
+<input type="button" id = "checkbox" onclick=deleAll()> <br>
 <table>
   <thead>
-    <tr>
+    <tr>  
       <th>Name</th>
       <th>Từ năm</th>
       <th>Đến năm</th>
       <th>Học/Làm ở</th>
       <th>Học phí/Lương (triệu/năm)</th>
       <th>Delete</th>
+      <th>Insert</th> 
     </tr>
   </thead>
   <tbody id='t'>
