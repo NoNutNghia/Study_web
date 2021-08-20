@@ -1,0 +1,21 @@
+th, td {
+    border: 1px solid grey;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th:nth-child(3), td:nth-child(3) {
+    width: 120px;
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #ddd;
+  }
+  
+  thead tr {
+    background-color: #aaa;
+  }
+  table {
+    border-collapse: collapse;
+  }
