@@ -13,7 +13,6 @@
 <input type="number" id="to"> To <br>  
 <input type="text" id="at"> At<br>
 <input type="number" id="money"> Money<br>
-<input type="button" value="Save" onclick=insert()> <br>
 <select onchange=showSort(this.value)>
   <option value="">--------- Sort by --------  </option>
   <option value="sf">Sort by From Year</option>
@@ -23,11 +22,12 @@
   <option value="sfnd">Sort by First Name (decrease)</option>
   <option value="slnd">Sort by Last Name (decrease)</option>
   <option value="si">Sort by Income</option>
-</select> Desc
-<input type="button" id = "checkbox" onclick=deleAll()> <br>
+</select> Desc 
+<input type="button" value = "Delete All" onclick=deleAll()> <br>
 <table>
   <thead>
     <tr>  
+      <th></th>
       <th>Name</th>
       <th>Từ năm</th>
       <th>Đến năm</th>
