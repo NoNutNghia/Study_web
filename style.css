@@ -19,3 +19,9 @@ th, td {
   table {
     border-collapse: collapse;
   }
+  #add{
+    display: inline;
+  }
+  #save{
+    display: none;
+  }

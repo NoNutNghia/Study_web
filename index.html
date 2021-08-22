@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
-  <title>JS Bin</title>
+  <title>My exercise</title>
 </head>
 <body>
 <input type="text" id="name"> Name<br>
@@ -13,17 +13,20 @@
 <input type="number" id="to"> To <br>  
 <input type="text" id="at"> At<br>
 <input type="number" id="money"> Money<br>
-<select onchange=showSort(this.value)>
+<input type="button" id="add" value="Add" onclick="add()">
+<input type="button" id="save" value="Save" onclick="save()"> <br>
+
+<select onchange = showSort(this.value)>
   <option value="">--------- Sort by --------  </option>
   <option value="sf">Sort by From Year</option>
   <option value="st">Sort by To Year</option>
   <option value="sfn">Sort by First Name (increase)</option>
   <option value="sln">Sort by Last Name (increase)</option>
-  <option value="sfnd">Sort by First Name (decrease)</option>
+  <option value="sfnd">Sort by First Name (decrease)</option>  
   <option value="slnd">Sort by Last Name (decrease)</option>
   <option value="si">Sort by Income</option>
-</select> Desc 
-<input type="button" value = "Delete All" onclick=deleAll()> <br>
+</select>  
+<input type="button" value = "Remove all" onclick=removeAll()> <br>
 <table>
   <thead>
     <tr>  
@@ -38,7 +41,6 @@
     </tr>
   </thead>
   <tbody id='t'>
-  
   </tbody>
 </table>
 </body>
